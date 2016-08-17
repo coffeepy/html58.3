@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="form.css" media="screen">
+  </head>
+  <body>
+    <form action="index.html" method="post">
+      <h1>Fill The Form</h1>
+      <input class="lg-input" type="email" name="email" placeholder="Enter Email" required autofocus="true">
+      <input class="lg-input" type="password" name="pass" value="" minlength="6" required placeholder="password">
+      <input class="lg-input" type="url" name="url" required placeholder="Your Project Holder">
+      <input class="lg-input" type="date" name="date" required placeholder="Project Completion Date">
+      <input class="lg-input" type="month" name="month"  required placeholder="Current Month">
+      <input class="lg-input" type="week" name="week"required  placeholder="Week">
+      <input class="lg-input" type="time" name="time" required placeholder="Time">
+      <input class="lg-input" type="color" name="color" required placeholder="Color">
+      Age: <span id="displayAge"></span><input type="range" min="18" max="120" required name="age" id="age" step="10">
+      Hobbies:<input  class="lg-input" type="text" name="name" required list="hobbies" placeholder="Hobbies">
+      <datalist id="hobbies">
+        <option value="Guitar">
+        <option value="Watching Movies">
+        <option value="Listening to Music">
+      </datalist>
+      <button type="submit" name="button">Submit Query</button>
+      <script type="text/javascript">
+      var ageInp = document.getElementById('age');
+      function getAge() {
+        var displayAge = document.getElementById('displayAge');
+        var age = ageInp.value;
+        displayAge.innerHTML = age;
+      }
+      ageInp.onchange = getAge
+      getAge()
+      </script>
+    </form>
+  </body>
+</html>
